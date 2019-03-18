@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const BlogPost = ({ data }) => {
   const { title, body, image, tags } = data.contentfulBlogPost
@@ -18,8 +19,11 @@ const BlogPost = ({ data }) => {
             </span>
           ))}
         </div> */}
-        <p className="body-text">{body.body}</p>
+        <span>
+          <div>{documentToReactComponents(JSON.parse(body.body))}</div>
+        </span>
         <Link to="/blogposts">View more posts</Link>
+        <br />
         <Link to="/">Back to Home</Link>
       </div>
     </Layout>
