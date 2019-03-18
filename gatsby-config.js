@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Fotografie`,
+    description: `Promovare fotografie si evenimente in zona Moldovei`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -25,6 +25,13 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `ph9jy2i1z9fp`,
+        accessToken: `c3916c4c2b0c69df56b4010b373a1bef5b81015dec520b71afd61bf952ac7a15`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
