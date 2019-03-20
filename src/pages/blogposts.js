@@ -9,7 +9,7 @@ const BlogPosts = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog posts" />
-      <h1>{"Here's a list of all blogposts!"}</h1>
+      <h1>{"Despre mine"}</h1>
       <div className="blogposts">
         {blogPosts.map(({ node: post }) => (
           <div key={post.id}>
