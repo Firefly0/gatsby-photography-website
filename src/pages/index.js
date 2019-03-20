@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import "react-bootstrap/dist/react-bootstrap.min.js"
 // import "./index.css"
 
 const IndexPage = () => (
@@ -15,6 +16,7 @@ const IndexPage = () => (
       <div>
         <div
           style={{
+            height: "900px",
             maxWidth: `300px`,
             margin: "0 auto 1.45rem",
           }}
