@@ -6,7 +6,8 @@ import "./header.scss"
 // import PrimarySearchAppBar from "./AppBar"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
-import NavDropdown from "react-bootstrap/NavDropdown"
+import logo from "../../images/logo.jpg"
+import NavItem from "react-bootstrap/NavItem"
 
 const linkStyle = {
   marginRight: "40px",
@@ -22,8 +23,11 @@ const Header = ({}) => (
     <Headroom style={{ height: "80px" }}>
       <div>
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#home">Ionut-Photography</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <img
+            style={{ width: "100px", margin: "0" }}
+            src={require("../../images/logo.jpg")}
+          />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Item>
@@ -33,17 +37,32 @@ const Header = ({}) => (
               </Nav.Item>
               <Nav.Item>
                 <Link style={linkStyle} to="/blogposts">
-                  Blog
+                  Contact
                 </Link>
               </Nav.Item>
               <Nav.Item>
                 <Link style={linkStyle} to="/">
-                  Albume
+                  Natura
                 </Link>
               </Nav.Item>
               <Nav.Item>
                 <Link style={linkStyle} to="/">
-                  Despre
+                  Nunta
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link style={linkStyle} to="/">
+                  Botez
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link style={linkStyle} to="/">
+                  Sedinta foto
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link style={linkStyle} to="/">
+                  Diverse
                 </Link>
               </Nav.Item>
             </Nav>
