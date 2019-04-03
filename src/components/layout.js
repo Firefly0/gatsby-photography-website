@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet"
 
 import Header from "./header/header"
 import "./layout.css"
+import "react-image-lightbox/style.css" // This only needs to be imported once in your app
 
 const Layout = ({ children }) => (
   <StaticQuery
