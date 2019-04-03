@@ -46,7 +46,7 @@ const Header = ({}) => (
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link style={linkStyle} to="/">
+                <Link style={linkStyle} to="/nunta">
                   Nunta
                 </Link>
               </Nav.Item>
@@ -58,11 +58,6 @@ const Header = ({}) => (
               <Nav.Item>
                 <Link style={linkStyle} to="/">
                   Sedinta foto
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link style={linkStyle} to="/">
-                  Diverse
                 </Link>
               </Nav.Item>
             </Nav>

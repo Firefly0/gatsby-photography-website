@@ -1,32 +1,69 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import "react-bootstrap/dist/react-bootstrap.min.js"
 // import "./index.css"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <div className="home">
-      <h1>Hello There</h1>
-      <p>Welcome my awesome blog</p>
-      <div>
+const Despre = ({ data }) => {
+  const despre = data.allContentfulDespre.edges[0].node
+  return (
+    <Layout>
+      <div style={{ maxWidth: 960, margin: "auto" }}>
+        <SEO title="Despre" keywords={[`gatsby`, `application`, `react`]} />
         <div
           style={{
-            height: "900px",
-            maxWidth: `300px`,
-            margin: "0 auto 1.45rem",
+            height: "300px",
+            overflow: "hidden",
+            marginTop: "-40px",
+            marginLeft: "auto",
           }}
         >
-          <Image />
+          <img src={despre.imagine.file.url} />
+        </div>
+        <div
+          style={{
+            margin: "40px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            paddingTop: "25px",
+          }}
+        >
+          {documentToReactComponents(JSON.parse(despre.text.text))}
+        </div>
+        <div style={{ maxWidth: "300px", margin: "auto" }}>
+          <img src={despre.logo.file.url} />
         </div>
       </div>
-      <Link to="/blogposts/">View all posts</Link>
-    </div>
-  </Layout>
-)
+    </Layout>
+  )
+}
 
-export default IndexPage
+export default Despre
+
+export const query = graphql`
+  query DesprePageQuery {
+    allContentfulDespre(limit: 1000) {
+      edges {
+        node {
+          imagine {
+            file {
+              url
+            }
+          }
+          text {
+            text
+          }
+          logo {
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`

@@ -1,3 +1,10 @@
 .header {
   height: 100px;
 }
+.imageAlbums {
+  margin: 5px;
+  transition: all 1s;
+  max-height: 300px;
+  max-width: none;
+  cursor: pointer;
+}
