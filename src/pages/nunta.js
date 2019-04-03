@@ -1,21 +1,29 @@
-import React from "react"
+import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import "react-bootstrap/dist/react-bootstrap.min.js"
-// import "./index.css"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import Lightbox from "react-image-lightbox"
 
-class Nunta extends React.Component {
+class Nunta extends Component {
   constructor(props) {
     super(props)
     this.state = {
       nunta: props.data.allContentfulNunta.edges,
+      photoIndex: 0,
+      isOpen: false,
+      indexAlbum: 0,
     }
   }
   render() {
+    const { photoIndex, isOpen } = this.state
+    const images = this.state.nunta[this.state.indexAlbum].node.imagini.map(
+      element => {
+        return element.file.url
+      }
+    )
     return (
       <Layout>
         <SEO title="Nunta" keywords={[`gatsby`, `application`, `react`]} />
@@ -35,7 +43,7 @@ class Nunta extends React.Component {
                 style={{
                   display: "flex",
                   flexWrap: "wrap",
-                  justifyContent: "center",
+                  justifyContent: "space-evenly",
                 }}
               >
                 {album.node.imagini.map((element, indexPhoto) => {
@@ -44,7 +52,11 @@ class Nunta extends React.Component {
                       className="imageAlbums"
                       src={element.file.url}
                       onClick={() => {
-                        console.log(indexAlbum, indexPhoto)
+                        this.setState({
+                          indexAlbum,
+                          photoIndex: indexPhoto,
+                          isOpen: true,
+                        })
                       }}
                     />
                   )
@@ -53,6 +65,24 @@ class Nunta extends React.Component {
             </div>
           )
         })}
+        {isOpen && (
+          <Lightbox
+            mainSrc={images[photoIndex]}
+            nextSrc={images[(photoIndex + 1) % images.length]}
+            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+            onCloseRequest={() => this.setState({ isOpen: false })}
+            onMovePrevRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + images.length - 1) % images.length,
+              })
+            }
+            onMoveNextRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + 1) % images.length,
+              })
+            }
+          />
+        )}
       </Layout>
     )
   }
