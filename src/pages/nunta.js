@@ -25,65 +25,74 @@ class Nunta extends Component {
       }
     )
     return (
-      <Layout>
-        <SEO title="Nunta" keywords={[`gatsby`, `application`, `react`]} />
-        {this.state.nunta.map((album, indexAlbum) => {
-          return (
-            <div style={{ marginTop: "20px" }}>
-              <p
-                style={{
-                  textAlign: "center",
-                  paddingTop: "22px",
-                  color: "blue",
-                }}
-              >
-                {album.node.title}
-              </p>
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                {album.node.imagini.map((element, indexPhoto) => {
-                  return (
-                    <img
-                      className="imageAlbums"
-                      src={element.file.url}
-                      onClick={() => {
-                        this.setState({
-                          indexAlbum,
-                          photoIndex: indexPhoto,
-                          isOpen: true,
-                        })
-                      }}
-                    />
-                  )
-                })}
-              </div>
-            </div>
-          )
-        })}
-        {isOpen && (
-          <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-            onCloseRequest={() => this.setState({ isOpen: false })}
-            onMovePrevRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + images.length - 1) % images.length,
-              })
-            }
-            onMoveNextRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + 1) % images.length,
-              })
-            }
-          />
-        )}
-      </Layout>
+      typeof window !== "undefined" && (
+        <Layout>
+          <SEO title="Nunta" keywords={[`gatsby`, `application`, `react`]} />
+          <div style={{ marginTop: "-40px" }}>
+            {this.state.nunta.map((album, indexAlbum) => {
+              return (
+                <div style={{ marginTop: "20px" }}>
+                  <p
+                    style={{
+                      textAlign: "center",
+                      paddingTop: "22px",
+                      color: "azure",
+                      fontSize: "32px",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    {album.node.title}
+                  </p>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      justifyContent: "space-around",
+                    }}
+                  >
+                    {album.node.imagini.map((element, indexPhoto) => {
+                      return (
+                        <img
+                          className="imageAlbums"
+                          src={element.file.url}
+                          onClick={() => {
+                            this.setState({
+                              indexAlbum,
+                              photoIndex: indexPhoto,
+                              isOpen: true,
+                            })
+                          }}
+                        />
+                      )
+                    })}
+                  </div>
+                </div>
+              )
+            })}
+            {isOpen && (
+              <Lightbox
+                mainSrc={images[photoIndex]}
+                nextSrc={images[(photoIndex + 1) % images.length]}
+                prevSrc={
+                  images[(photoIndex + images.length - 1) % images.length]
+                }
+                onCloseRequest={() => this.setState({ isOpen: false })}
+                onMovePrevRequest={() =>
+                  this.setState({
+                    photoIndex:
+                      (photoIndex + images.length - 1) % images.length,
+                  })
+                }
+                onMoveNextRequest={() =>
+                  this.setState({
+                    photoIndex: (photoIndex + 1) % images.length,
+                  })
+                }
+              />
+            )}
+          </div>
+        </Layout>
+      )
     )
   }
 }
