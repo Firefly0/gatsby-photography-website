@@ -6,8 +6,6 @@ import "./header.scss"
 // import PrimarySearchAppBar from "./AppBar"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
-import logo from "../../images/logo.jpg"
-import NavItem from "react-bootstrap/NavItem"
 
 const linkStyle = {
   marginRight: "40px",
@@ -22,7 +20,7 @@ const Header = ({}) => (
   >
     <Headroom style={{ height: "80px" }}>
       <div>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="dark" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <img
             style={{ width: "100px", margin: "0" }}

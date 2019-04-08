@@ -3,11 +3,11 @@
 }
 .imageAlbums {
   margin: 5px;
-  transition: all 1s;
+  transition: all 0.5s;
   max-height: 250px;
   max-width: none;
   cursor: pointer;
   &:hover {
-    filter: drop-shadow(0 0 0.5rem #1299bb);
+    filter: drop-shadow(0 0 0.5rem #fed);
   }
 }
