@@ -34,12 +34,12 @@ const Header = ({}) => (
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link style={linkStyle} to="/blogposts">
+                <Link style={linkStyle} to="/">
                   Contact
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link style={linkStyle} to="/">
+                <Link style={linkStyle} to="/natura">
                   Natura
                 </Link>
               </Nav.Item>
@@ -49,12 +49,12 @@ const Header = ({}) => (
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link style={linkStyle} to="/">
+                <Link style={linkStyle} to="/botez">
                   Botez
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link style={linkStyle} to="/">
+                <Link style={linkStyle} to="/sedintaFoto">
                   Sedinta foto
                 </Link>
               </Nav.Item>

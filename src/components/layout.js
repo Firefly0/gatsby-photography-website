@@ -42,6 +42,7 @@ const Layout = ({ children }) => (
             padding: `0px 1.0875rem 1.45rem`,
             paddingTop: 0,
             backgroundColor: "#353535",
+            minHeight: "100vh",
           }}
         >
           <main>{children}</main>
