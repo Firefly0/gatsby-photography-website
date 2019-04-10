@@ -13,6 +13,7 @@ import { Helmet } from "react-helmet"
 import Header from "./header/header"
 import "./layout.css"
 import "react-image-lightbox/style.css" // This only needs to be imported once in your app
+import ReactCSSTransitionGroup from "react-addons-css-transition-group"
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -41,11 +42,18 @@ const Layout = ({ children }) => (
             margin: `0 auto`,
             padding: `0px 1.0875rem 1.45rem`,
             paddingTop: 0,
-            backgroundColor: "#353535",
+            backgroundColor: "black",
             minHeight: "100vh",
           }}
         >
-          <main>{children}</main>
+          <ReactCSSTransitionGroup
+            transitionName="example"
+            transitionEnterTimeout={5000}
+            transitionLeaveTimeout={300}
+          >
+            <main>{children}</main>
+          </ReactCSSTransitionGroup>
+          >
         </div>
       </>
     )}

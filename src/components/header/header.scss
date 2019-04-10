@@ -2,12 +2,22 @@
   height: 100px;
 }
 .imageAlbums {
+  animation: 10s linear 1s slidein;
   margin: 5px;
   transition: all 0.5s;
-  max-height: 250px;
+  max-height: 350px;
   max-width: none;
+  max-width: 90vw;
   cursor: pointer;
   &:hover {
     filter: drop-shadow(0 0 0.5rem #fed);
   }
+}
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
 }

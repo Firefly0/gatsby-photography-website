@@ -6,6 +6,7 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import "react-bootstrap/dist/react-bootstrap.min.js"
 import Lightbox from "react-image-lightbox"
+import ReactCSSTransitionGroup from "react-addons-css-transition-group"
 
 class Nunta extends Component {
   constructor(props) {
@@ -52,17 +53,27 @@ class Nunta extends Component {
                   >
                     {album.node.imagini.map((element, indexPhoto) => {
                       return (
-                        <img
-                          className="imageAlbums"
-                          src={element.file.url}
-                          onClick={() => {
-                            this.setState({
-                              indexAlbum,
-                              photoIndex: indexPhoto,
-                              isOpen: true,
-                            })
-                          }}
-                        />
+                        <ReactCSSTransitionGroup
+                          transitionName="example"
+                          transitionEnterTimeout={5000}
+                          transitionLeaveTimeout={3000}
+                          transitionAppear={true}
+                          transitionAppearTimeout={500}
+                        >
+                          <div>
+                            <img
+                              className="imageAlbums"
+                              src={element.file.url}
+                              onClick={() => {
+                                this.setState({
+                                  indexAlbum,
+                                  photoIndex: indexPhoto,
+                                  isOpen: true,
+                                })
+                              }}
+                            />
+                          </div>
+                        </ReactCSSTransitionGroup>
                       )
                     })}
                   </div>
