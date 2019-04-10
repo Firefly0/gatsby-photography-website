@@ -1,4 +1,7 @@
-Portofolio photography website
+Portfolio photography website
+
 Build with Gatsby
+
 Hosted on Netifly
+
 Managed with Contentful
