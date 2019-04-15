@@ -10,6 +10,8 @@ import Nav from "react-bootstrap/Nav"
 const linkStyle = {
   marginRight: "40px",
   marginLeft: "10px",
+  color: "white",
+  fontStyle: "italic",
 }
 
 const Header = ({}) => (
@@ -34,28 +36,23 @@ const Header = ({}) => (
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link style={linkStyle} to="/">
-                  Contact
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
                 <Link style={linkStyle} to="/natura">
                   Natura
                 </Link>
               </Nav.Item>
               <Nav.Item>
                 <Link style={linkStyle} to="/nunta">
-                  Nunta
+                  Nunti
                 </Link>
               </Nav.Item>
               <Nav.Item>
                 <Link style={linkStyle} to="/botez">
-                  Botez
+                  Botezuri
                 </Link>
               </Nav.Item>
               <Nav.Item>
                 <Link style={linkStyle} to="/sedintaFoto">
-                  Sedinta foto
+                  Sedinte foto
                 </Link>
               </Nav.Item>
             </Nav>

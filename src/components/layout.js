@@ -14,6 +14,7 @@ import Header from "./header/header"
 import "./layout.css"
 import "react-image-lightbox/style.css" // This only needs to be imported once in your app
 import ReactCSSTransitionGroup from "react-addons-css-transition-group"
+import { SocialIcon } from "react-social-icons"
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -50,10 +51,38 @@ const Layout = ({ children }) => (
             transitionName="example"
             transitionEnterTimeout={5000}
             transitionLeaveTimeout={300}
+            transitionAppear={true}
+            transitionAppearTimeout={500}
           >
             <main>{children}</main>
           </ReactCSSTransitionGroup>
           >
+          <div
+            style={{
+              margin: "auto",
+              textAlign: "center",
+              position: "fixed",
+              left: "0px",
+              bottom: "0px",
+              height: "60px",
+              width: "100%",
+              background: "#999",
+              padding: "5px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                maxWidth: "800px",
+                margin: "auto",
+              }}
+            >
+              <SocialIcon url="http://twitter.com/jaketrent" />
+              <SocialIcon url="https://www.facebook.com/diprilipceanuimage" />
+              <SocialIcon url="http://instagram.com/jaketrent" />
+            </div>
+          </div>
         </div>
       </>
     )}

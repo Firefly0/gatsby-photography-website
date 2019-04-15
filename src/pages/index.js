@@ -1,24 +1,42 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React, { Component } from "react"
+import Coverflow from "react-coverflow"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import SEO from "../components/seo"
+import { SocialIcon } from "react-social-icons"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import "react-bootstrap/dist/react-bootstrap.min.js"
-// import "./index.css"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const Despre = ({ data }) => {
-  const despre = data.allContentfulDespre.edges[0].node
-  return (
-    typeof window !== "undefined" && (
+class Index extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      acasa: props.data.allContentfulAcasa.edges,
+      despre: props.data.allContentfulDespre.edges[0].node,
+    }
+  }
+  render() {
+    const { despre } = this.state
+    return (
       <Layout>
+        <div style={{ marginTop: "-40px" }}>
+          <Coverflow
+            width={960}
+            height={480}
+            displayQuantityOfSide={2}
+            navigation={false}
+            enableHeading={false}
+          >
+            {this.state.acasa[0].node.imaginiPentruCarousel.map(element => {
+              return <img src={element.file.url} alt="title or description" />
+            })}
+          </Coverflow>
+        </div>
         <div style={{ maxWidth: 960, margin: "auto" }}>
           <SEO title="Despre" keywords={[`gatsby`, `application`, `react`]} />
           <div
             style={{
               height: "300px",
               overflow: "hidden",
-              marginTop: "-40px",
               marginLeft: "auto",
             }}
           >
@@ -41,13 +59,25 @@ const Despre = ({ data }) => {
         </div>
       </Layout>
     )
-  )
+  }
 }
 
-export default Despre
+export default Index
 
 export const query = graphql`
-  query DesprePageQuery {
+  query IndexQuery {
+    allContentfulAcasa(limit: 1000) {
+      edges {
+        node {
+          id
+          imaginiPentruCarousel {
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
     allContentfulDespre(limit: 1000) {
       edges {
         node {
