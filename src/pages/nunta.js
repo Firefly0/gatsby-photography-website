@@ -53,27 +53,19 @@ class Nunta extends Component {
                   >
                     {album.node.imagini.map((element, indexPhoto) => {
                       return (
-                        <ReactCSSTransitionGroup
-                          transitionName="example"
-                          transitionEnterTimeout={5000}
-                          transitionLeaveTimeout={3000}
-                          transitionAppear={true}
-                          transitionAppearTimeout={500}
-                        >
-                          <div>
-                            <img
-                              className="imageAlbums"
-                              src={element.file.url}
-                              onClick={() => {
-                                this.setState({
-                                  indexAlbum,
-                                  photoIndex: indexPhoto,
-                                  isOpen: true,
-                                })
-                              }}
-                            />
-                          </div>
-                        </ReactCSSTransitionGroup>
+                        <div>
+                          <img
+                            className="imageAlbums"
+                            src={element.file.url}
+                            onClick={() => {
+                              this.setState({
+                                indexAlbum,
+                                photoIndex: indexPhoto,
+                                isOpen: true,
+                              })
+                            }}
+                          />
+                        </div>
                       )
                     })}
                   </div>
