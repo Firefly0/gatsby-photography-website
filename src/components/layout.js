@@ -74,13 +74,13 @@ const Layout = ({ children }) => (
               style={{
                 display: "flex",
                 justifyContent: "space-around",
-                maxWidth: "800px",
+                maxWidth: "500px",
                 margin: "auto",
               }}
             >
-              <SocialIcon url="http://twitter.com/jaketrent" />
+              <SocialIcon url="https://www.pinterest.com/ionutip/" />
               <SocialIcon url="https://www.facebook.com/diprilipceanuimage" />
-              <SocialIcon url="http://instagram.com/jaketrent" />
+              <SocialIcon url="https://www.instagram.com/ionutip/" />
             </div>
           </div>
         </div>
