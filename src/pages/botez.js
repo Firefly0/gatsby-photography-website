@@ -27,7 +27,7 @@ class Botez extends Component {
     return (
       typeof window !== "undefined" && (
         <Layout>
-          <SEO title="Botez" keywords={[`gatsby`, `application`, `react`]} />
+          <SEO title="Botez" keywords={[`botez`, `poze`, `fotograf`, `iasi`]} />
           <div style={{ marginTop: "-40px" }}>
             {this.state.botez.map((album, indexAlbum) => {
               return (
