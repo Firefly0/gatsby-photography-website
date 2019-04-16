@@ -29,7 +29,7 @@ class SedintaFoto extends Component {
         <Layout>
           <SEO
             title="Sedinta Foto"
-            keywords={[`gatsby`, `application`, `react`]}
+            keywords={[`albume`, `fotografie`, `foto`]}
           />
           <div style={{ marginTop: "-40px" }}>
             {this.state.sedintaFoto.map((album, indexAlbum) => {

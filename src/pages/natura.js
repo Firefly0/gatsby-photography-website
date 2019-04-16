@@ -27,7 +27,7 @@ class Natura extends Component {
     return (
       typeof window !== "undefined" && (
         <Layout>
-          <SEO title="Nunta" keywords={[`gatsby`, `application`, `react`]} />
+          <SEO title="Natura" keywords={[`poze`, `natura`, `iasi`]} />
           <div style={{ marginTop: "-40px" }}>
             {this.state.natura.map((album, indexAlbum) => {
               return (
