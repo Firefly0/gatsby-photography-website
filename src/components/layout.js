@@ -82,14 +82,17 @@ const Layout = ({ children }) => (
               <SocialIcon
                 style={{ height: 30, width: 30 }}
                 url="https://www.pinterest.com/ionutip/"
+                target="_blank"
               />
               <SocialIcon
                 style={{ height: 30, width: 30 }}
                 url="https://www.facebook.com/diprilipceanuimage"
+                target="_blank"
               />
               <SocialIcon
                 style={{ height: 30, width: 30 }}
                 url="https://www.instagram.com/ionutip/"
+                target="_blank"
               />
             </div>
           </div>
