@@ -30,7 +30,13 @@ class Nunta extends Component {
         <Layout>
           <SEO
             title="Nunta"
-            keywords={[`nunta`, `fotograf`, `iasi`, `profesional``evenimente`]}
+            keywords={[
+              `nunta`,
+              `fotograf`,
+              `iasi`,
+              `profesional`,
+              `evenimente`,
+            ]}
           />
           <div style={{ marginTop: "-40px" }}>
             {this.state.nunta.map((album, indexAlbum) => {
