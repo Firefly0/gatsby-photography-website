@@ -64,23 +64,33 @@ const Layout = ({ children }) => (
               position: "fixed",
               left: "0px",
               bottom: "0px",
-              height: "60px",
+              height: "40px",
               width: "100%",
               background: "#999",
               padding: "5px",
+              background: "rgba(0, 0, 0, 1)",
             }}
           >
             <div
               style={{
                 display: "flex",
                 justifyContent: "space-around",
-                maxWidth: "500px",
+                maxWidth: "300px",
                 margin: "auto",
               }}
             >
-              <SocialIcon url="https://www.pinterest.com/ionutip/" />
-              <SocialIcon url="https://www.facebook.com/diprilipceanuimage" />
-              <SocialIcon url="https://www.instagram.com/ionutip/" />
+              <SocialIcon
+                style={{ height: 30, width: 30 }}
+                url="https://www.pinterest.com/ionutip/"
+              />
+              <SocialIcon
+                style={{ height: 30, width: 30 }}
+                url="https://www.facebook.com/diprilipceanuimage"
+              />
+              <SocialIcon
+                style={{ height: 30, width: 30 }}
+                url="https://www.instagram.com/ionutip/"
+              />
             </div>
           </div>
         </div>
