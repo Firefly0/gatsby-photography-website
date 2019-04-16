@@ -31,7 +31,7 @@ class Botez extends Component {
           <div style={{ marginTop: "-40px" }}>
             {this.state.botez.map((album, indexAlbum) => {
               return (
-                <div style={{ marginTop: "20px" }}>
+                <div style={{ marginTop: "20px", marginBottom: "30px" }}>
                   <p
                     style={{
                       textAlign: "center",

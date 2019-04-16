@@ -31,7 +31,7 @@ class SedintaFoto extends Component {
             title="Sedinta Foto"
             keywords={[`albume`, `fotografie`, `foto`]}
           />
-          <div style={{ marginTop: "-40px" }}>
+          <div style={{ marginTop: "-40px", marginBottom: "30px" }}>
             {this.state.sedintaFoto.map((album, indexAlbum) => {
               return (
                 <div style={{ marginTop: "20px" }}>

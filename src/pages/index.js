@@ -16,10 +16,7 @@ class Index extends Component {
     return (
       typeof window !== "undefined" && (
         <Layout>
-          <SEO
-            title="Acasa"
-            keywords={[`fotograf`, `bun`, `iasi`, `profesional`]}
-          />
+          <SEO title="Acasa" keywords={[`fotograf`, `bun`, `iasi`]} />
           <div style={{ maxWidth: 960, margin: "auto" }}>
             <div
               style={{

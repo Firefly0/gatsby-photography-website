@@ -28,17 +28,8 @@ class Nunta extends Component {
     return (
       typeof window !== "undefined" && (
         <Layout>
-          <SEO
-            title="Nunta"
-            keywords={[
-              `nunta`,
-              `fotograf`,
-              `iasi`,
-              `profesional`,
-              `evenimente`,
-            ]}
-          />
-          <div style={{ marginTop: "-40px" }}>
+          <SEO title="Nunta" keywords={[`nunta`, `fotograf`, `iasi`]} />
+          <div style={{ marginTop: "-40px", marginBottom: "30px" }}>
             {this.state.nunta.map((album, indexAlbum) => {
               return (
                 <div style={{ marginTop: "20px" }}>
