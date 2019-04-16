@@ -2,11 +2,10 @@ import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import "react-bootstrap/dist/react-bootstrap.min.js"
 import Lightbox from "react-image-lightbox"
-import ReactCSSTransitionGroup from "react-addons-css-transition-group"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 class Nunta extends Component {
   constructor(props) {
@@ -44,6 +43,18 @@ class Nunta extends Component {
                   >
                     {album.node.title}
                   </p>
+                  {album.node.descriere && (
+                    <p
+                      style={{
+                        maxWidth: "960px",
+                        margin: "auto",
+                        color: "white",
+                        padding: "15px",
+                      }}
+                    >
+                      {album.node.descriere.descriere}
+                    </p>
+                  )}
                   <div
                     style={{
                       display: "flex",
@@ -112,6 +123,9 @@ export const query = graphql`
             file {
               url
             }
+          }
+          descriere {
+            descriere
           }
         }
       }
