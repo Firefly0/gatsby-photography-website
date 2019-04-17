@@ -33,7 +33,7 @@ class Nunta extends Component {
             {this.state.nunta.map((album, indexAlbum) => {
               return (
                 <Animated
-                  animationIn="bounceInUp"
+                  animationIn="slideInUp"
                   animationOut="fadeOut"
                   isVisible={true}
                 >

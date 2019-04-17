@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import SEO from "../components/seo"
 import { Animated } from "react-animated-css"
+import ScrollAnimation from "react-animate-on-scroll"
 
 import Layout from "../components/layout"
 
@@ -28,24 +29,30 @@ class Index extends Component {
               }}
             >
               <Animated
-                animationIn="bounceInLeft"
+                animationIn="slideInUp"
                 animationOut="fadeOut"
                 isVisible={true}
               >
                 <img src={despre.imagine.file.url} />
               </Animated>
             </div>
-            <div
-              style={{
-                margin: "40px",
-                marginLeft: "auto",
-                marginRight: "auto",
-                paddingTop: "25px",
-                color: "white",
-              }}
+            <ScrollAnimation
+              delay={1000}
+              animateIn="fadeIn"
+              initiallyVisible={false}
             >
-              {documentToReactComponents(JSON.parse(despre.text.text))}
-            </div>
+              <div
+                style={{
+                  margin: "40px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  paddingTop: "25px",
+                  color: "white",
+                }}
+              >
+                {documentToReactComponents(JSON.parse(despre.text.text))}
+              </div>
+            </ScrollAnimation>
             <div style={{ maxWidth: "300px", margin: "auto" }}>
               <img src={despre.logo.file.url} />
             </div>
