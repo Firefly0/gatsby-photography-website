@@ -15,6 +15,7 @@ import "./layout.css"
 import "react-image-lightbox/style.css" // This only needs to be imported once in your app
 import ReactCSSTransitionGroup from "react-addons-css-transition-group"
 import { SocialIcon } from "react-social-icons"
+import "animate.css/animate.min.css"
 
 const Layout = ({ children }) => (
   <StaticQuery

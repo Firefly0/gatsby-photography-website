@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import SEO from "../components/seo"
+import { Animated } from "react-animated-css"
 
 import Layout from "../components/layout"
 
@@ -26,7 +27,13 @@ class Index extends Component {
                 marginTop: "-40px",
               }}
             >
-              <img src={despre.imagine.file.url} />
+              <Animated
+                animationIn="bounceInLeft"
+                animationOut="fadeOut"
+                isVisible={true}
+              >
+                <img src={despre.imagine.file.url} />
+              </Animated>
             </div>
             <div
               style={{
