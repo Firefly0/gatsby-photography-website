@@ -17,10 +17,10 @@ class Natura extends Component {
       indexAlbum: 0,
     }
   }
-  onClickForScrollAnimation = (indexAlbum, indexPhoto) => {
+  onClickForScrollAnimation = (indexAlbum, photoIndex) => {
     this.setState({
       indexAlbum,
-      photoIndex: indexPhoto,
+      photoIndex,
       isOpen: true,
     })
   }
