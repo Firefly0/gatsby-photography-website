@@ -39,6 +39,7 @@ class Natura extends Component {
             <AlbumContent
               photos={this.state.natura}
               onClickForScrollAnimation={this.onClickForScrollAnimation}
+              animationIn="slideInRight"
             />
             {isOpen && (
               <Lightbox

@@ -39,6 +39,7 @@ class Nunta extends Component {
             <AlbumContent
               photos={this.state.nunta}
               onClickForScrollAnimation={this.onClickForScrollAnimation}
+              animationIn="slideInUp"
             />
 
             {isOpen && (

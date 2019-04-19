@@ -37,8 +37,9 @@ class Botez extends Component {
           <SEO title="Botez" keywords={[`botez`, `poze`, `fotograf`, `iasi`]} />
           <div style={{ marginTop: "-40px" }}>
             <AlbumContent
-              photos={this.state.sedintaFoto}
+              photos={this.state.botez}
               onClickForScrollAnimation={this.onClickForScrollAnimation}
+              animationIn="slideInLeft"
             />
             {isOpen && (
               <Lightbox
