@@ -1,11 +1,11 @@
 import React, { Component } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import "react-bootstrap/dist/react-bootstrap.min.js"
 import Lightbox from "react-image-lightbox"
+import AlbumContent from "../components/albumContent"
 
 class Natura extends Component {
   constructor(props) {
@@ -16,6 +16,13 @@ class Natura extends Component {
       isOpen: false,
       indexAlbum: 0,
     }
+  }
+  onClickForScrollAnimation = (indexAlbum, indexPhoto) => {
+    this.setState({
+      indexAlbum,
+      photoIndex: indexPhoto,
+      isOpen: true,
+    })
   }
   render() {
     const { photoIndex, isOpen } = this.state
@@ -29,48 +36,10 @@ class Natura extends Component {
         <Layout>
           <SEO title="Natura" keywords={[`poze`, `natura`, `iasi`]} />
           <div style={{ marginTop: "-40px", marginBottom: "30px" }}>
-            {this.state.natura.map((album, indexAlbum) => {
-              return (
-                <div style={{ marginTop: "20px" }}>
-                  <p
-                    style={{
-                      textAlign: "center",
-                      paddingTop: "22px",
-                      color: "azure",
-                      fontSize: "32px",
-                      fontStyle: "italic",
-                    }}
-                  >
-                    {album.node.title}
-                  </p>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      justifyContent: "space-around",
-                    }}
-                  >
-                    {album.node.imagini.map((element, indexPhoto) => {
-                      return (
-                        <div>
-                          <img
-                            className="imageAlbums"
-                            src={element.file.url}
-                            onClick={() => {
-                              this.setState({
-                                indexAlbum,
-                                photoIndex: indexPhoto,
-                                isOpen: true,
-                              })
-                            }}
-                          />
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
-              )
-            })}
+            <AlbumContent
+              photos={this.state.natura}
+              onClickForScrollAnimation={this.onClickForScrollAnimation}
+            />
             {isOpen && (
               <Lightbox
                 mainSrc={images[photoIndex]}
