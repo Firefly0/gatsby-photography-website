@@ -9,7 +9,7 @@ class AlbumContent extends Component {
         {this.props.photos.map((album, indexAlbum) => {
           return (
             <Animated
-              animationIn={this.props.animationIn}
+              animationIn="fadeIn"
               animationOut="fadeOut"
               isVisible={true}
             >
