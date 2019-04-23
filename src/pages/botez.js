@@ -2,10 +2,10 @@ import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import "react-bootstrap/dist/react-bootstrap.min.js"
 import Lightbox from "react-image-lightbox"
+import AlbumContent from "../components/albumContent"
 
 class Botez extends Component {
   constructor(props) {
@@ -16,6 +16,13 @@ class Botez extends Component {
       isOpen: false,
       indexAlbum: 0,
     }
+  }
+  onClickForScrollAnimation = (indexAlbum, photoIndex) => {
+    this.setState({
+      indexAlbum,
+      photoIndex,
+      isOpen: true,
+    })
   }
   render() {
     const { photoIndex, isOpen } = this.state
@@ -29,48 +36,11 @@ class Botez extends Component {
         <Layout>
           <SEO title="Botez" keywords={[`botez`, `poze`, `fotograf`, `iasi`]} />
           <div style={{ marginTop: "-40px" }}>
-            {this.state.botez.map((album, indexAlbum) => {
-              return (
-                <div style={{ marginTop: "20px", marginBottom: "30px" }}>
-                  <p
-                    style={{
-                      textAlign: "center",
-                      paddingTop: "22px",
-                      color: "azure",
-                      fontSize: "32px",
-                      fontStyle: "italic",
-                    }}
-                  >
-                    {album.node.title}
-                  </p>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      justifyContent: "space-around",
-                    }}
-                  >
-                    {album.node.imagini.map((element, indexPhoto) => {
-                      return (
-                        <div>
-                          <img
-                            className="imageAlbums"
-                            src={element.file.url}
-                            onClick={() => {
-                              this.setState({
-                                indexAlbum,
-                                photoIndex: indexPhoto,
-                                isOpen: true,
-                              })
-                            }}
-                          />
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
-              )
-            })}
+            <AlbumContent
+              photos={this.state.botez}
+              onClickForScrollAnimation={this.onClickForScrollAnimation}
+              animationIn="slideInLeft"
+            />
             {isOpen && (
               <Lightbox
                 mainSrc={images[photoIndex]}
