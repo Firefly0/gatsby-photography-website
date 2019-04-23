@@ -48,6 +48,7 @@ class Index extends Component {
                   marginRight: "auto",
                   paddingTop: "25px",
                   color: "white",
+                  textAlign: "justify",
                 }}
               >
                 {documentToReactComponents(JSON.parse(despre.text.text))}
