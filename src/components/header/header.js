@@ -12,6 +12,8 @@ const linkStyle = {
   marginLeft: "10px",
   color: "white",
   fontStyle: "italic",
+  fontSize: "20px",
+  fontWeight: "bold",
 }
 
 const Header = ({}) => (
@@ -20,12 +22,18 @@ const Header = ({}) => (
       marginBottom: `1.45rem`,
     }}
   >
-    <Headroom style={{ height: "80px" }}>
+    <Headroom style={{ height: "60px" }}>
       <div>
-        <Navbar bg="dark" expand="lg">
+        <Navbar style={{ height: "60px" }} bg="dark" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <img
-            style={{ width: "100px", margin: "0" }}
+            style={{
+              width: "150px",
+              margin: "0",
+              marginBottom: "-15px",
+              marginTop: "-15px",
+              marginRight: "20px",
+            }}
             src={require("../../images/logo.jpg")}
           />
           <Navbar.Collapse id="basic-navbar-nav">

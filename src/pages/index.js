@@ -70,9 +70,15 @@ class Index extends Component {
                   color: "white",
                 }}
               >
-                <p>Contact:</p>
-                <p>Mobil: {despre.mobil}</p>
-                <p>Gmail: {despre.gmail}</p>
+                <p style={{ marginBottom: "-2px", fontFamily: "auto" }}>
+                  Contact:
+                </p>
+                <p style={{ marginBottom: "-2px", fontFamily: "auto" }}>
+                  Mobil: {despre.mobil}
+                </p>
+                <p style={{ marginBottom: "-2px", fontFamily: "auto" }}>
+                  Gmail: {despre.gmail}
+                </p>
               </div>
               <div>
                 <iframe
