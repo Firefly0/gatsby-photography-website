@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Animated } from "react-animated-css"
 import ScrollAnimation from "react-animate-on-scroll"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 class AlbumContent extends Component {
   render() {
@@ -34,7 +35,9 @@ class AlbumContent extends Component {
                       padding: "15px",
                     }}
                   >
-                    {album.node.descriere.descriere}
+                    {documentToReactComponents(
+                      JSON.parse(album.node.descriere.descriere)
+                    )}
                   </p>
                 )}
                 <div
