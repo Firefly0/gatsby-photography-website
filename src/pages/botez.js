@@ -11,7 +11,7 @@ class Botez extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      botez: props.data.allContentfulBotez.edges,
+      botez: props.data.allContentfulFotografieDeBotez.edges,
       photoIndex: 0,
       isOpen: false,
       indexAlbum: 0,
@@ -73,7 +73,7 @@ export default Botez
 
 export const query = graphql`
   query BotezQuery {
-    allContentfulBotez(limit: 1000) {
+    allContentfulFotografieDeBotez(limit: 1000) {
       edges {
         node {
           title

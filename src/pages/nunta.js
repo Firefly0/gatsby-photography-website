@@ -11,7 +11,7 @@ class Nunta extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      nunta: props.data.allContentfulNunta.edges,
+      nunta: props.data.allContentfulFotografieDeNunta.edges,
       photoIndex: 0,
       isOpen: false,
       indexAlbum: 0,
@@ -74,7 +74,7 @@ export default Nunta
 
 export const query = graphql`
   query NuntaQuery {
-    allContentfulNunta(limit: 1000) {
+    allContentfulFotografieDeNunta(limit: 1000) {
       edges {
         node {
           title
