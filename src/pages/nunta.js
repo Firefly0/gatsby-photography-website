@@ -73,7 +73,7 @@ class Nunta extends Component {
 export default Nunta
 
 export const query = graphql`
-  query NuntaQuery {
+  query FotografieDeNuntaQuery {
     allContentfulFotografieDeNunta(limit: 1000) {
       edges {
         node {

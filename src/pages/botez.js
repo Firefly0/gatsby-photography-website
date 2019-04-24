@@ -72,7 +72,7 @@ class Botez extends Component {
 export default Botez
 
 export const query = graphql`
-  query BotezQuery {
+  query FotografieDeBotezQuery {
     allContentfulFotografieDeBotez(limit: 1000) {
       edges {
         node {
