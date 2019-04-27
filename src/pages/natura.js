@@ -11,7 +11,7 @@ class Natura extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      natura: props.data.allContentfulNatura.edges,
+      natura: props.data.allContentfulDiverseEvenimente.edges,
       photoIndex: 0,
       isOpen: false,
       indexAlbum: 0,
@@ -73,7 +73,7 @@ export default Natura
 
 export const query = graphql`
   query NaturaQuery {
-    allContentfulNatura(limit: 1000) {
+    allContentfulDiverseEvenimente(limit: 1000) {
       edges {
         node {
           title

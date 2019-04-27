@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,7 +11,7 @@ class SedintaFoto extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      sedintaFoto: props.data.allContentfulSedintaFoto.edges,
+      sedintaFoto: props.data.allContentfulSedinte.edges,
       photoIndex: 0,
       isOpen: false,
       indexAlbum: 0,
@@ -75,7 +75,7 @@ export default SedintaFoto
 
 export const query = graphql`
   query SedintaFotoQuery {
-    allContentfulSedintaFoto(limit: 1000) {
+    allContentfulSedinte(limit: 1000) {
       edges {
         node {
           title

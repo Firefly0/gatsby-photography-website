@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -72,7 +72,7 @@ class Botez extends Component {
 export default Botez
 
 export const query = graphql`
-  query FotografieDeBotezQuery {
+  query BotezQuery {
     allContentfulFotografieDeBotez(limit: 1000) {
       edges {
         node {
@@ -81,9 +81,6 @@ export const query = graphql`
             file {
               url
             }
-          }
-          descriere {
-            descriere
           }
         }
       }

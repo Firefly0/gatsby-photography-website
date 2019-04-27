@@ -3,6 +3,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import SEO from "../components/seo"
 import { Animated } from "react-animated-css"
 import ScrollAnimation from "react-animate-on-scroll"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 
